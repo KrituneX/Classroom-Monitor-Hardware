@@ -1,0 +1,19 @@
+[Unit]
+Description=Mark24 Schedule-Aware Recorder
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+User=dafi
+WorkingDirectory=/home/dafi/mark24
+ExecStart=/home/dafi/mark24/venv/bin/python /home/dafi/mark24/mark24_rec.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/dafi/mark24/mark24.log
+StandardError=append:/home/dafi/mark24/mark24.log
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

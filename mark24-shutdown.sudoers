@@ -1,0 +1,7 @@
+# /etc/sudoers.d/mark24-shutdown
+# Allow user 'dafi' run shutdown command tanpa password (untuk Mark24).
+# Install dengan:
+#   sudo cp mark24-shutdown.sudoers /etc/sudoers.d/mark24-shutdown
+#   sudo chmod 440 /etc/sudoers.d/mark24-shutdown
+
+dafi ALL=(ALL) NOPASSWD: /sbin/shutdown, /sbin/reboot, /usr/sbin/shutdown, /usr/sbin/reboot
